@@ -15,6 +15,7 @@ function CarouselBanner({ movies }: Props) {
   const [emblaRef] = useEmblaCarousel({ loop: true, duration: 100 }, [
     Autoplay(),
   ]);
+
   return (
     <div
       className="overflow-hidden lg:-mt-40 relative cursor-pointer"
@@ -23,19 +24,19 @@ function CarouselBanner({ movies }: Props) {
       <div className="flex">
         {movies.map((movie) => (
           <div key={movie.id} className="flex-full min-w-0 relative">
-              <Image
-                key={movie.id}
-                src={getImagePath(movie.backdrop_path, true)}
-                alt={movie.title}
-                width={1920}
-                height={1000}
-              />
-              <div className="hidden lg:inline absolute mt-0 top-0 pt-40 xl:pt-52 left-0 lg:mt-40 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-10 space-y-5 text-white">
-                <h2 className="text-5xl font-bold max-w-xl z-50">
-                  {movie.title}
-                </h2>
-                <p className="max-w-xl line-clamp-3">{movie.overview}</p>
-              </div>
+            <Image
+              key={movie.id}
+              src={getImagePath(movie.backdrop_path, true)}
+              alt={movie.title}
+              width={1920}
+              height={1000}
+            />
+            <div className="hidden lg:inline absolute mt-0 top-0 pt-40 xl:pt-52 left-0 lg:mt-40 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-10 space-y-5 text-white">
+              <h2 className="text-5xl font-bold max-w-xl z-50">
+                {movie.title}
+              </h2>
+              <p className="max-w-xl line-clamp-3">{movie.overview}</p>
+            </div>
           </div>
         ))}
       </div>

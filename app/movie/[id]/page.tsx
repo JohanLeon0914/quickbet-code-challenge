@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import FavoriteButton from "@/components/FavoriteButton";
 import MoviesCarousel from "@/components/MoviesCarousel";
+import WatchOfficialTrailerButton from "@/components/WatchOfficialTrailerButton";
 import { getMovieById, getPopularMovies } from "@/lib/getMovies";
 import { Movie } from "@/typing";
-import { CiPlay1 } from "react-icons/ci";
 
 type Params = Promise<{ id: string }>;
 async function MoviePage(props: { params: Params }) {
@@ -11,10 +11,6 @@ async function MoviePage(props: { params: Params }) {
   const id = params.id;
   const movie: Movie = await getMovieById(id);
   const popularMovies = await getPopularMovies();
-
-  const trailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(
-    movie.original_title + " official trailer"
-  )}`;
 
   return (
     <div className="relative bg-gray-800">
@@ -78,15 +74,7 @@ async function MoviePage(props: { params: Params }) {
             </div>
 
             <div className="pt-5">
-              <a
-                href={trailerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 bg-yellow-400 hover:bg-yellow-500 rounded-lg shadow-md transition"
-              >
-                Watch Official Trailer
-                <CiPlay1 className="text-2xl" />
-              </a>
+              <WatchOfficialTrailerButton movie={movie} />
             </div>
           </div>
         </div>
