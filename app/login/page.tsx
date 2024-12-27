@@ -12,6 +12,7 @@ interface Inputs {
 
 function Login() {
   const [login, setLogin] = useState(true); 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const router = useRouter();
 
   const {
@@ -31,9 +32,9 @@ function Login() {
       }
     } catch (error: unknown) {
       if (error instanceof Error) {
-        console.error("Error during authentication:", error.message);
+        setErrorMessage(error.message); 
       } else {
-        console.error("An unknown error occurred");
+        setErrorMessage("An unknown error occurred");
       }
     }
   };
@@ -45,6 +46,9 @@ function Login() {
         className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
       >
         <h1 className="text-4xl font-semibold text-white">{login ? "Sign In" : "Sign Up"}</h1>
+        {errorMessage && (
+          <div className="text-red-500 text-center mt-4">{errorMessage}</div> // Mostrar mensaje de error
+        )}
         <div className="space-y-4">
           <label className="inline-block w-full">
             <input
@@ -84,7 +88,10 @@ function Login() {
 
         <button
           type="button"
-          onClick={() => setLogin(!login)}
+          onClick={() => {
+            setLogin(!login);
+            setErrorMessage(null);
+          }}
           className="w-full rounded-lg bg-gray-700 py-3 font-semibold text-white hover:bg-gray-600 transition duration-200"
         >
           {login ? "Create an Account" : "Already have an account? Sign In"}
