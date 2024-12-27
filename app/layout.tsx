@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Disney+ Clone",
-  description: "For educations purposes",
+  title: "Quickbet",
+  description: "Code Challenge",
 };
 
 export default function RootLayout({
