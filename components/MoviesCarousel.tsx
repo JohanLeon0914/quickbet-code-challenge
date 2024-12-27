@@ -18,7 +18,7 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (carouselRef.current) {
-      const scrollAmount = direction === "left" ? -300 : 300; 
+      const scrollAmount = direction === "left" ? -500 : 500; 
       carouselRef.current.scrollBy({
         left: scrollAmount,
         behavior: "smooth",

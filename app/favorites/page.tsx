@@ -22,7 +22,18 @@ export default function FavoritesPage() {
   }
 
   if (favorites.length === 0) {
-    return <div className="text-white">No tienes películas favoritas.</div>;
+    return (
+      <div className="flex items-center justify-center h-[80vh] text-center px-4">
+        <div>
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-300">
+            No tienes películas favoritas.
+          </h1>
+          <p className="mt-4 text-gray-400 text-lg sm:text-xl">
+            ¡Explora nuestra colección y guarda tus películas favoritas para verlas más tarde!
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (
