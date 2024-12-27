@@ -4,12 +4,6 @@ import MoviesCarousel from "@/components/MoviesCarousel";
 import { getMovieById, getPopularMovies } from "@/lib/getMovies";
 import { Movie } from "@/typing";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
 async function MoviePage({ params }: { params: { id: string } }) {
   const { id } = params;
   const movie: Movie = await getMovieById(id);
@@ -23,7 +17,7 @@ async function MoviePage({ params }: { params: { id: string } }) {
           backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Capa oscura */}
+        <div className="absolute inset-0 bg-black opacity-50"></div> 
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-10">
@@ -37,7 +31,7 @@ async function MoviePage({ params }: { params: { id: string } }) {
           </div>
 
           <div className="text-white space-y-6">
-            <h1 className="text-3xl md:text-5xl font-semibold text-shadow">{movie.title}</h1> {/* Sombra para mejorar legibilidad */}
+            <h1 className="text-3xl md:text-5xl font-semibold text-shadow">{movie.original_title}</h1> {/* Sombra para mejorar legibilidad */}
             
             <div>
               <h3 className="text-xl font-semibold">Géneros:</h3>

@@ -7,7 +7,7 @@ import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth"; 
 
 function ProfileDropdown() {
-  const [user, setUser] = useState<any>(null); 
+  const [user, setUser] = useState(null); 
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

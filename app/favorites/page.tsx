@@ -4,9 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import MoviesCarousel from "@/components/MoviesCarousel";
 
-// Componente de la página de favoritos
 export default function FavoritesPage() {
-  const [favorites, setFavorites] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
@@ -40,7 +39,7 @@ export default function FavoritesPage() {
         <MoviesCarousel
           title="Your favorite movies"
           movies={favorites}
-          isVertival
+          isVertical
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { SearchResults } from "../typing";
+import { SearchResults, Movie } from "../typing";
 
 async function fetchFromTMDB(url: URL, cacheTime?: number) {
     url.searchParams.set("include_adult", "false");
@@ -72,13 +72,28 @@ export async function getSearchMovies(term: string) {
 
 }
 
-export async function getMovieById(movieId: string) {
+export async function getMovieById(movieId: string): Promise<Movie> {
     if (!movieId) {
         throw new Error("Movie ID is required");
     }
 
     const url = new URL(`https://api.themoviedb.org/3/movie/${movieId}`);
-    const data = await fetchFromTMDB(url);
+
+    const options: RequestInit = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.TMDB_API_KEY}`, 
+        },
+    };
+
+    const response = await fetch(url.toString(), options);
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch movie with ID: ${movieId}`);
+    }
+
+    const data = (await response.json()) as Movie;
 
     return data;
 }

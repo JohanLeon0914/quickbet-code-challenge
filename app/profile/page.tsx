@@ -8,7 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import Link from "next/link";
 
 export default function ProfilePage() {
-  const [user, setUser] = useState<any>(null); 
+  const [user, setUser] = useState(null); 
   const [loading, setLoading] = useState<boolean>(true); 
   const router = useRouter();
 
