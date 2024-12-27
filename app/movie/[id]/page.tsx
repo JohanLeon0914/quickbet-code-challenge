@@ -3,9 +3,12 @@ import FavoriteButton from "@/components/FavoriteButton";
 import MoviesCarousel from "@/components/MoviesCarousel";
 import { getMovieById, getPopularMovies } from "@/lib/getMovies";
 import { Movie } from "@/typing";
-
-async function MoviePage({ params }: { params: { id: string } }) {
-  const { id } = params;
+type Params = Promise<{ id: string }>
+async function MoviePage(props: {
+  params: Params
+}) {
+  const params = await props.params
+  const id = params.id
   const movie: Movie = await getMovieById(id);
   const popularMovies = await getPopularMovies();
 
