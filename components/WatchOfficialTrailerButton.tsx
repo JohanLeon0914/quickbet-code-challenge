@@ -62,7 +62,7 @@ const WatchOfficialTrailerButton = ({ movie }: TrailerLinkProps) => {
               onClick={closeModal}
               className="absolute top-4 right-2 text-3xl text-gray-300 hover:text-white transition z-50"
             >
-              <IoMdCloseCircle size={24} />
+              <IoMdCloseCircle size={32} />
             </button>
 
             <div className="relative w-full h-0 pb-[56.25%] z-20">

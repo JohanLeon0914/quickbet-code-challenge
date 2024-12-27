@@ -5,10 +5,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { auth } from "@/firebase"; 
-import { onAuthStateChanged } from "firebase/auth"; 
+import { onAuthStateChanged, User } from "firebase/auth"; 
 
 function ProfileDropdown() {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

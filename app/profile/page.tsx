@@ -4,11 +4,11 @@
 import { useEffect, useState } from "react";
 import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 import Link from "next/link";
 
 export default function ProfilePage() {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true); 
   const router = useRouter();
 

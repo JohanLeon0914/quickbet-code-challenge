@@ -29,8 +29,12 @@ function Login() {
         await createUserWithEmailAndPassword(auth, email, password);
         router.push("/");
       }
-    } catch (error) {
-      console.error("Error during authentication:", error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error during authentication:", error.message);
+      } else {
+        console.error("An unknown error occurred");
+      }
     }
   };
 
