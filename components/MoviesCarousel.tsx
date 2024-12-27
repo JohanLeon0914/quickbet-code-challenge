@@ -26,13 +26,19 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
     }
   };
 
+  const handleShowArrows = (show: boolean) => {
+    if (!isVertical) {
+      setShowArrows(show)
+    }
+  };
+
   return (
     <div className="z-10 text-white">
       <h2 className="text-xl font-bold px-10 py-2">{title}</h2>
       <div
         className="relative"
-        onMouseEnter={() => setShowArrows(true)} 
-        onMouseLeave={() => setShowArrows(false)} 
+        onMouseEnter={() => handleShowArrows(true)} 
+        onMouseLeave={() => handleShowArrows(false)} 
       >
         <div
           className={cn(
