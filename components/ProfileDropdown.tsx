@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { IoPersonCircle } from "react-icons/io5";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -34,7 +35,7 @@ function ProfileDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="text-white flex justify-center items-center">
-        Profile <ChevronDown className="ml-1" />
+        <IoPersonCircle size={24} /> <ChevronDown className="ml-1" />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>

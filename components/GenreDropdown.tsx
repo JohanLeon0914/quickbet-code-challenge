@@ -1,4 +1,5 @@
 import { Genres } from "@/typing";
+import { RiMovie2AiLine } from "react-icons/ri";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,7 +30,7 @@ async function GenreDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="text-white flex justify-center items-center">
-        Genres <ChevronDown className="ml-1" />
+        <RiMovie2AiLine size={24} /> <ChevronDown className="ml-1" />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>
