@@ -2,7 +2,7 @@ import MoviesCarousel from "@/components/MoviesCarousel";
 import { getDiscoverMovies } from "@/lib/getMovies";
 
 type Props = {
-  par: {
+  params: {
     id: string;
   };
   searchParams?: {
@@ -10,9 +10,10 @@ type Props = {
   };
 };
 
-async function GenrePage({ par, searchParams }: Props) {
-  const { id } = par;
+async function GenrePage({ params, searchParams }: Props) {
+  const id = params.id; 
   const genre = searchParams?.genre || "Unknown";
+
   const movies = await getDiscoverMovies(id);
 
   return (
