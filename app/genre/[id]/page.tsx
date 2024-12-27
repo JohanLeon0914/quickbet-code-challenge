@@ -1,13 +1,12 @@
 import MoviesCarousel from "@/components/MoviesCarousel";
 import { getDiscoverMovies } from "@/lib/getMovies";
 
-export default async function GenrePage({
-  params,
-  searchParams,
-}: {
+interface PageProps {
   params: { id: string };
   searchParams: { genre?: string };
-}) {
+}
+
+export default async function GenrePage({ params, searchParams }: PageProps) {
   const { id } = params;
   const genre = searchParams?.genre || "Unknown";
 
