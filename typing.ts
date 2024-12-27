@@ -13,6 +13,7 @@ export type Movie = {
 	vote_count: number;
 	video: boolean;
 	vote_average: number;
+	media_type?: string
 }
 
 export type SearchResults = {
@@ -30,3 +31,13 @@ export type Genre = {
 export type Genres = {
     genres: Genre[]
 }
+
+export interface Element {
+    type:
+      | 'Bloopers'
+      | 'Featurette'
+      | 'Behind the Scenes'
+      | 'Clip'
+      | 'Trailer'
+      | 'Teaser'
+  }

@@ -83,7 +83,7 @@ export async function getMovieById(movieId: string): Promise<Movie> {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_API_KEY}`, 
+            Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
         },
     };
 
