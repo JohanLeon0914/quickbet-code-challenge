@@ -10,9 +10,10 @@ type Props = {
   };
 };
 
-async function GenrePage({ params: { id }, searchParams }: Props) {
+async function GenrePage({ params, searchParams }: Props) {
+  const { id } = params;
+  const genre = searchParams?.genre || "Unknown";
   const movies = await getDiscoverMovies(id);
-  const genre = searchParams?.genre || "Unknown"; 
 
   return (
     <div className="max-w-7xl mx-auto mt-20">
