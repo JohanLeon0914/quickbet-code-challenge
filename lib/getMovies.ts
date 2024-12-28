@@ -11,10 +11,10 @@ async function fetchFromTMDB(url: URL, cacheTime?: number) {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
         },
         next: {
-            revalidate: cacheTime || 60 * 60 * 24, //24 hours
+            revalidate: cacheTime || 60 * 60 * 24, 
         },
     };
 
@@ -83,7 +83,7 @@ export async function getMovieById(movieId: string): Promise<Movie> {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
         },
     };
 
