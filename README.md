@@ -22,8 +22,8 @@ Sigue los siguientes pasos para ejecutar el proyecto en tu entorno local:
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/nombre-del-repo.git
-cd nombre-del-repo
+git clone https://github.com/JohanLeon0914/quickbet-code-challenge.git
+cd quickbet-code-challenge
 ```
 
 ### 2. Instala las dependencias
