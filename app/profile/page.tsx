@@ -27,18 +27,25 @@ export default function ProfilePage() {
   }, [router]);
 
   if (loading) {
-    return <div className="text-white">Cargando...</div>; 
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+        <div className="flex items-center space-x-4">
+          <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-lg font-medium text-gray-300">Loading...</p>
+        </div>
+      </div>
+    );
   }
 
   if (!user) {
-    return <div className="text-white">No estás logueado.</div>; 
+    return <div className="text-white">You are not logged in.</div>; 
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <h1 className="text-4xl font-bold mb-6">Your Profile</h1>
-  
-      <div className="bg-gray-900 p-8 rounded-xl shadow-lg w-96 transform transition-transform duration-300 hover:scale-105">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 sm:px-8">
+      <h1 className="text-4xl font-bold mb-6 text-center">Your Profile</h1>
+
+      <div className="bg-gray-900 p-8 rounded-xl shadow-lg w-full max-w-md transform transition-transform duration-300 hover:scale-105">
         <div className="mb-6 text-center">
           <img
             src={user.photoURL || "/default-profile.png"}
@@ -46,7 +53,7 @@ export default function ProfilePage() {
             className="w-32 h-32 rounded-full mx-auto border-4 border-blue-500"
           />
         </div>
-  
+
         <div className="space-y-4">
           <p className="text-lg font-semibold text-blue-400">
             Correo electrónico: <span className="text-white">{user.email}</span>
@@ -58,8 +65,8 @@ export default function ProfilePage() {
           )}
         </div>
       </div>
-  
-      <div className="mt-8 p-4 w-96 flex flex-col space-y-4">
+
+      <div className="mt-8 w-full max-w-md flex flex-col space-y-4">
         <Link href="/favorites">
           <button className="w-full px-6 py-3 bg-blue-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300">
             Favorite Movies ❤️
