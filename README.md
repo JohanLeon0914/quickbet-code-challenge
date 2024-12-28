@@ -4,6 +4,10 @@ Este repositorio contiene la solución para la prueba técnica de Inlaze para el
 
 Puedes ver la aplicación en vivo aquí: [QuickBet Code Challenge](https://quickbet-code-challenge.vercel.app)
 
+## Descripción de la Prueba
+
+La aplicación es una plataforma web que integra la API de **TMDB** para proporcionar información detallada sobre películas. Permite a los usuarios explorar contenido cinematográfico, guardar sus películas favoritas, buscar películas por título y filtrarlas por género. Además, incluye la funcionalidad de gestión de sesiones de usuarios mediante **Firebase**.
+
 ## Requisitos
 
 Asegúrate de tener instalado lo siguiente en tu máquina:
@@ -18,8 +22,8 @@ Sigue los siguientes pasos para ejecutar el proyecto en tu entorno local:
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/JohanLeon0914/quickbet-code-challenge.git
-cd quickbet-code-challenge
+git clone https://github.com/tu-usuario/nombre-del-repo.git
+cd nombre-del-repo
 ```
 
 ### 2. Instala las dependencias
@@ -37,7 +41,7 @@ yarn install
 Crea un archivo llamado `.env` en la raíz del proyecto con el siguiente contenido:
 
 ```env
-NEXT_PUBLIC_API_KEY="tu_api_key_amdb"
+NEXT_PUBLIC_API_KEY="tu_api_key_tmdb"
 ```
 
 ### 4. Inicia el servidor de desarrollo
@@ -66,5 +70,3 @@ El proyecto está desplegado en Vercel, lo que permite una experiencia rápida y
 - [Repositorio oficial de Next.js en GitHub](https://github.com/vercel/next.js): Explora el código fuente de Next.js.
 
 ---
-
-
