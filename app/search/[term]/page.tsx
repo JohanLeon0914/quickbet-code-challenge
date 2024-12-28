@@ -23,7 +23,7 @@ async function SearchPage(props: {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col space-y-4 mt-32 xl:mt-42">
 
-          <h1 className="text-6xl font-bold px-10">Results for {termToUse}</h1>
+          <h1 className="text-4xl font-bold px-5 py-4 text-yellow-400">Results for {termToUse}</h1>
           <MoviesCarousel title="Movies" movies={movies} isVertical />
           <MoviesCarousel title="You may also like" movies={popularMovies} />
         </div>

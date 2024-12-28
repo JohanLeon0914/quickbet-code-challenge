@@ -33,7 +33,7 @@ const FavoriteButton = ({ movie }: FavoriteButtonProps) => {
   return (
     <button
       onClick={handleFavoriteToggle}
-      className={`px-2 py-2 mt-4 rounded-lg text-black ${isFavorite ? "bg-white" : "bg-gray-800"} hover:bg-opacity-80 transition`}
+      className={`px-2 py-2 mt-4 rounded-lg ${isFavorite ? "bg-yellow-400" : "bg-gray-800"}`}
     >
       {isFavorite ? "❤️" : "🤍"} 
     </button>

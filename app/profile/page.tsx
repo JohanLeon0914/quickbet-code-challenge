@@ -43,7 +43,7 @@ export default function ProfilePage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 sm:px-8">
-      <h1 className="text-4xl font-bold mb-6 text-center">Your Profile</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-yellow-400">Your Profile</h1>
 
       <div className="bg-gray-900 p-8 rounded-xl shadow-lg w-full max-w-md transform transition-transform duration-300 hover:scale-105">
         <div className="mb-6 text-center">
