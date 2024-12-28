@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inlaze Frontend Developer Test
 
-## Getting Started
+Este repositorio contiene la solución para la prueba técnica de Inlaze para el cargo de Desarrollador Frontend. La aplicación está construida utilizando [Next.js](https://nextjs.org) y está desplegada en Vercel.
 
-First, run the development server:
+Puedes ver la aplicación en vivo aquí: [QuickBet Code Challenge](https://quickbet-code-challenge.vercel.app)
+
+## Requisitos
+
+Asegúrate de tener instalado lo siguiente en tu máquina:
+
+- [Node.js](https://nodejs.org/) (versión 16 o superior recomendada).
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/).
+
+## Instalación y Ejecución
+
+Sigue los siguientes pasos para ejecutar el proyecto en tu entorno local:
+
+### 1. Clona el repositorio
+
+```bash
+git clone https://github.com/JohanLeon0914/quickbet-code-challenge.git
+cd quickbet-code-challenge
+```
+
+### 2. Instala las dependencias
+
+Usa npm o yarn para instalar las dependencias del proyecto:
+
+```bash
+npm install
+# o
+yarn install
+```
+
+### 3. Configura las variables de entorno
+
+Crea un archivo llamado `.env` en la raíz del proyecto con el siguiente contenido:
+
+```env
+NEXT_PUBLIC_API_KEY="tu_api_key_amdb"
+```
+
+### 4. Inicia el servidor de desarrollo
+
+Ejecuta el siguiente comando para iniciar el servidor:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El servidor estará disponible en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx`: Página principal de la aplicación.
+- `components/`: Componentes reutilizables de la aplicación.
 
-## Learn More
+## Despliegue
 
-To learn more about Next.js, take a look at the following resources:
+El proyecto está desplegado en Vercel, lo que permite una experiencia rápida y eficiente. Para más información sobre cómo desplegar aplicaciones Next.js, consulta la [documentación oficial de Vercel](https://vercel.com/docs).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Recursos Adicionales
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Documentación de Next.js](https://nextjs.org/docs): Aprende más sobre las características y API de Next.js.
+- [Tutorial interactivo de Next.js](https://nextjs.org/learn): Una introducción práctica a Next.js.
+- [Repositorio oficial de Next.js en GitHub](https://github.com/vercel/next.js): Explora el código fuente de Next.js.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
