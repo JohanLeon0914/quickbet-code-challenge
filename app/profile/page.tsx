@@ -43,7 +43,7 @@ export default function ProfilePage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 sm:px-8">
-      <h1 className="text-4xl font-bold mb-6 text-center text-yellow-400">Your Profile</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-white">Your Profile</h1>
 
       <div className="bg-gray-900 p-8 rounded-xl shadow-lg w-full max-w-md transform transition-transform duration-300 hover:scale-105">
         <div className="mb-6 text-center">
@@ -69,12 +69,12 @@ export default function ProfilePage() {
 
       <div className="mt-8 w-full max-w-md flex flex-col space-y-4">
         <Link href="/favorites">
-          <button className="w-full px-6 py-3 bg-blue-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300">
+          <button className="w-full px-6 py-3 bg-yellow-400 text-black text-lg font-medium rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg transition-all duration-300">
             Favorite Movies ❤️
           </button>
         </Link>
         <Link href="/logout">
-          <button className="w-full px-6 py-3 bg-red-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-300">
+          <button className="w-full px-6 py-3 bg-gray-700 text-white text-lg font-medium rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg transition-all duration-300">
             Logout
           </button>
         </Link>
