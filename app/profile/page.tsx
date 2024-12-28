@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,20 +5,21 @@ import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, User } from "firebase/auth";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState<boolean>(true); 
+  const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        setLoading(false); 
+        setLoading(false);
       } else {
         setLoading(false);
-        router.push("/login"); 
+        router.push("/login");
       }
     });
 
@@ -38,26 +38,30 @@ export default function ProfilePage() {
   }
 
   if (!user) {
-    return <div className="text-white">You are not logged in.</div>; 
+    return <div className="text-white">You are not logged in.</div>;
   }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 sm:px-8">
-      <h1 className="text-4xl font-bold mb-6 text-center text-white">Your Profile</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-white">
+        Your Profile
+      </h1>
 
       <div className="bg-gray-900 p-8 rounded-xl shadow-lg w-full max-w-md transform transition-transform duration-300 hover:scale-105">
         <div className="mb-6 text-center">
-          <img
+          <Image
             src={user.photoURL || "/default-profile.png"}
             alt="Profile"
-            className="w-32 h-32 rounded-full mx-auto border-4 border-blue-500"
+            className="rounded-full mx-auto border-4 border-blue-500"
+            width={128} 
+            height={128} 
+            quality={75} 
+            priority 
           />
         </div>
 
         <div className="space-y-4 text-center">
-          <p className="text-lg font-semibold text-blue-400">
-            Email: 
-          </p>
+          <p className="text-lg font-semibold text-blue-400">Email:</p>
           <span className="text-white">{user.email}</span>
           {user.displayName && (
             <p className="text-sm text-gray-400">
