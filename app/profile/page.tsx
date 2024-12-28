@@ -54,10 +54,11 @@ export default function ProfilePage() {
           />
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 text-center">
           <p className="text-lg font-semibold text-blue-400">
-            Correo electrónico: <span className="text-white">{user.email}</span>
+            Email: 
           </p>
+          <span className="text-white">{user.email}</span>
           {user.displayName && (
             <p className="text-sm text-gray-400">
               Nombre: <span className="text-gray-300">{user.displayName}</span>
